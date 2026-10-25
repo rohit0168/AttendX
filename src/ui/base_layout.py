@@ -8,7 +8,7 @@ def style_background_home():
       background: #5865f2 !important;
       }
       .stApp div[data-testid="stColumn"]{
-      background-color:green !important;
+      background-color:#172554 !important;
       padding:2.5rem !important;
       border-radius:5rem !important;
       }
