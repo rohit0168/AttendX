@@ -4,7 +4,7 @@ from src.components.header import header_dashboard
 from src.database.db import check_teacher_exist,teacher_login,create_teacher
 from PIL import Image
 import numpy as np
-from src.pipelines.face_pipeline import predict_attendence
+from src.pipelines.face_pipeline import predict_attendance
 from src.database.db import get_all_students,create_student,get_student_subjects,get_student_attendance,unenroll_student_to_subject 
 import time
 from src.pipelines.face_pipeline import get_face_embeddings,train_classifier
@@ -96,7 +96,7 @@ def student_screen():
           img=np.array(Image.open(photo_source))
 
           with st.spinner("AI is scanning...."):
-                detected,all_ids,num_faces=predict_attendence(img)
+                detected,all_ids,num_faces=predict_attendance(img)
 
                 if num_faces ==0:
                       st.warning("Faces not Found")
