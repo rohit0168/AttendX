@@ -36,6 +36,13 @@ def voice_attendance_dialog(selected_subject_id):
                 return
             
             audio_bytes = audio_data.read()
+                        
+            if audio_data is None:
+                st.warning("Please record audio first.")
+                st.stop()
+
+            audio_bytes = audio_data.getvalue()
+
 
             detected_scores = process_bulk_audio(audio_bytes, candidates_dict)
 

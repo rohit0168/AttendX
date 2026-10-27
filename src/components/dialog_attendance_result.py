@@ -26,6 +26,7 @@ def show_attendance_result(df, logs):
                 st.rerun()
             except Exception as e:
                 st.error('Sync failed!')
+                st.exception(e)
 
 
 
